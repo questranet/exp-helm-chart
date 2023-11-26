@@ -17,10 +17,10 @@ pipeline {
     stage('Deployment') {
       steps {
          dir('APP') {
-           git branch: 'main', url: "https://github.com/raghudevopsb75/${APP_NAME}"
+           git branch: 'main', url: "https://github.com/waleapagun/${APP_NAME}"
          }
         dir('HELM') {
-          git branch: 'main', url: "https://github.com/raghudevopsb75/expense-helm-chart"
+          git branch: 'main', url: "https://github.com/waleapagun/expense-helm-chart"
           sh 'helm upgrade -i ${APP_NAME} . -f ${WORKSPACE}/APP/helm/${ENV}.yaml --set appVersion=${VERSION}'
         }
 
