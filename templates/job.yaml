@@ -10,7 +10,7 @@ spec:
       restartPolicy: Never
       initContainers:
         - name: aws-param
-          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.initContainers.imageVersion }}
+          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-parameter-init-container:{{ .Values.initContainers.imageVersion }}
           env:
             - name: INPUT
               value: "{{ .Values.job.INPUT }}"
