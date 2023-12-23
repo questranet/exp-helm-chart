@@ -16,4 +16,4 @@ spec:
                   number: {{ .Values.ingress.port }}
             path: /
             pathType: Prefix
-  {{- end }}
+{{- end }}
